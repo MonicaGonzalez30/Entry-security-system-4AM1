@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div id="bienvenida">
+                <h2>¡Bienvenido!</h2>
+                <p>Inicia sesión en el Sistema de Seguridad de Entrada de ESCOM.</p> <br><br>
+                <p>¿No tienes una cuenta? <a href="#">Registrarse</a></p>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><h5>Inicia sesión</h5></li>
+                  <li class="list-group-item">
+                    <div class="card-body">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span><i class="fa-solid fa-key"></i></span>
+                            </div>
+                            <input id="identificador" class="form-control" placeholder="Identificador" type="text" pattern="[A-Z0-9]+" title="Ingrese un identificador válido (número de boleta o identificador asignado)" required autofocus>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span><i class="fa-solid fa-unlock-keyhole"></i></span>
+                            </div>
+                            <input id="contra" class="form-control" placeholder="Contraseña" type="password" required>
+                        </div>
+                        <div class="checkbox mb-3">
+                            <label>
+                              <input type="checkbox" value="remember-me"> Recordar usuario
+                            </label>
+                          </div>
+                    </div>
+                </ul>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Iniciar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
