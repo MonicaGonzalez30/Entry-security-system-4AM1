@@ -5,8 +5,17 @@
     padding-bottom: 12%;
 
     font-family: 'Open Sans', sans-serif;
-    background: rgb(156,232,248);
-    background: linear-gradient(135deg, rgba(156,232,248,1) 12%, rgba(0,212,255,1) 44%, rgba(61,61,197,1) 88%);
+    // background: rgb(156,232,248);
+    // background: linear-gradient(135deg, rgba(156,232,248,1) 12%, rgba(0,212,255,1) 44%, rgba(61,61,197,1) 88%);
+    background-image: url(https://static.vecteezy.com/system/resources/previews/006/897/557/non_2x/elegant-blue-wave-abstract-background-abstract-blue-wave-gradient-background-illustration-vector.jpg);
+    
+    // https://static.vecteezy.com/system/resources/previews/006/897/557/non_2x/elegant-blue-wave-abstract-background-abstract-blue-wave-gradient-background-illustration-vector.jpg
+    // https://static.vecteezy.com/system/resources/previews/006/154/513/non_2x/blue-wave-abstract-background-blue-gradient-waving-shape-background-elegant-blue-wave-background-free-vector.jpg
+    // https://static.vecteezy.com/system/resources/previews/005/880/496/non_2x/background-with-blue-gradient-free-vector.jpg
+     
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    // color: white;
 }
 
 .row{
