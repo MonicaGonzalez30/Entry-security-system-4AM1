@@ -1,0 +1,27 @@
+main{
+    width: 100%;
+    height: 100%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/007/428/838/non_2x/light-blue-background-used-for-design-work-and-wallpaper-with-a-pattern-free-photo.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+h3{
+    padding-top: 1.5%;
+}
+
+#formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#camposAlumno, #camposAdministrativos{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+#estadoAlumno, #correo{
+    padding-left: 20px;
+}
