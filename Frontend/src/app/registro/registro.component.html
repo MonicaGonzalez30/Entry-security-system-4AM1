@@ -93,6 +93,39 @@
                           </div>
                       </div>
                   </div>
+
+                  <!-- Campos para Policia -->
+                  <div id="camposPolicia" *ngSwitchCase="'4'">
+                    <div class="col-sm-4">
+                        <label for="correoAdmin" class="form-label">Correo electrónico: </label>
+                        <input type="email" class="form-control" id="correoPoli" name="correoPoli" placeholder="tu@ejemplo.com" value="" required>
+                        <div class="invalid-feedback">
+                          Ingrese una dirección de correo electrónico válida.
+                        </div>
+                    </div>
+                  </div>
+
+                  <!-- Campos para Intendencia -->
+                  <div id="camposIntendencia" *ngSwitchCase="'5'">
+                    <div class="col-sm-4">
+                        <label for="correoAdmin" class="form-label">Correo electrónico: </label>
+                        <input type="email" class="form-control" id="correoInten" name="correoInten" placeholder="tu@ejemplo.com" value="" required>
+                        <div class="invalid-feedback">
+                          Ingrese una dirección de correo electrónico válida.
+                        </div>
+                    </div>
+                  </div>
+
+                  <!-- Campos para Cafeteria -->
+                  <div id="camposCafeteria" *ngSwitchCase="'6'">
+                    <div class="col-sm-4">
+                        <label for="correoAdmin" class="form-label">Correo electrónico: </label>
+                        <input type="email" class="form-control" id="correoCafe" name="correoCafe" placeholder="tu@ejemplo.com" value="" required>
+                        <div class="invalid-feedback">
+                          Ingrese una dirección de correo electrónico válida.
+                        </div>
+                    </div>
+                  </div>
               </div>
           </div>
           <hr class="my-4">
