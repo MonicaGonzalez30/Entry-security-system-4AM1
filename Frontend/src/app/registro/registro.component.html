@@ -1,0 +1,143 @@
+<main>
+    <div class="py-5 text-center">
+      <h3>Formulario de registro</h3>
+    </div>
+
+    <div class="row 3">
+      <div class="col-12">
+        <div class="needs-validation" novalidate>
+          <div id="formulario" class="row g-3">
+              <div class="col-sm-6">
+                  <!-- Etiqueta para el tipo de usuario -->
+                  <label for="tipoUsuario" class="form-label">Tipo de Usuario</label>
+                  <select class="form-select" aria-label="Default select example" name="tipoUsuario" [(ngModel)]="tipoUsuario" (ngModelChange)="obtenerTipoUsuario()">
+                      <option value="0"> - </option>
+                      <option value="1">Alumno</option>
+                      <option value="2">Maestro</option>
+                      <option value="3">Administrativo</option>
+                      <option value="4">Policia</option>
+                      <option value="5">Intendencia</option>
+                      <option value="6">Cafeteria</option>
+                  </select>
+              </div>
+              
+              <div class="col-sm-5">
+                  <label for="name" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                  <div class="invalid-feedback">
+                  Se requiere un nombre válido.
+                  </div>
+              </div>
+  
+              <div class="col-sm-4">
+                  <label for="apePat" class="form-label">Apellido paterno</label>
+                  <input type="text" class="form-control" id="apePat" placeholder="" value="" required>
+                  <div class="invalid-feedback">
+                  Se requiere un apellido paterno válido.
+                  </div>
+              </div>
+
+              <div class="col-sm-4">
+                  <label for="apeMat" class="form-label">Apellido materno</label>
+                  <input type="text" class="form-control" id="apeMat" placeholder="" value="" required>
+                  <div class="invalid-feedback">
+                  Se requiere un apellido materno válido.
+                  </div>
+              </div>
+  
+              <div class="col-sm-3">
+                  <label for="password" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="password" placeholder="" value="" required>
+                  <div class="invalid-feedback">
+                  Ingrese una contraseña con 8 dígitos que contenga numeros, letras y caracteres especiales.
+                  </div>
+              </div>
+
+              <div class="col-sm-11" id="contTipo" [ngSwitch]="tipoUsuario">
+                  <!-- Campos específicos para cada tipo de usuario -->
+                  <div id="camposAlumno" *ngSwitchCase="'1'">
+                      <div class="col-sm-3">
+                          <label for="boleta" class="form-label">Boleta: </label>
+                          <input type="text" class="form-control" id="boleta" name="boleta" required>
+                      </div>
+                      
+                      <div class="col-sm-4" id="estadoAlumno">
+                          <label for="estado" class="form-label">Estado actual: </label>
+                          <select class="form-select" aria-label="Default select example" id="estado" name="estado">
+                              <option value="0">Inscrito</option>
+                              <option value="1">Egresado</option>
+                          </select>
+                      </div>
+                  </div>
+              
+                  <!-- Campos para Maestro -->
+                  <div id="camposMaestro" *ngSwitchCase="'2'">
+                      <div class="col-sm-3">
+                          <label for="idMaestro" class="form-label">Id del maestro: </label>
+                          <input type="text" class="form-control" id="idMaestro" name="idMaestro">
+                      </div>
+                  </div>
+              
+                  <!-- Campos para Administrativos -->
+                  <div id="camposAdministrativos" *ngSwitchCase="'3'">
+                      <div class="col-sm-5">
+                          <label for="departamentoAdmin" class="form-label">Departamento al que pertenece: </label>
+                          <input type="text" class="form-control" id="departamentoAdmin" name="departamentoAdmin">
+                      </div>
+
+                      <div class="col-sm-4" id="correo">
+                          <label for="correoAdmin" class="form-label">Correo electrónico: </label>
+                          <input type="email" class="form-control" id="correoAdmin" name="correoAdmin" placeholder="tu@ejemplo.com" value="" required>
+                          <div class="invalid-feedback">
+                            Ingrese una dirección de correo electrónico válida.
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Campos para Policia -->
+                  <div id="camposPolicia" *ngSwitchCase="'4'">
+                    <div class="col-sm-4">
+                        <label for="correoAdmin" class="form-label">Correo electrónico: </label>
+                        <input type="email" class="form-control" id="correoPoli" name="correoPoli" placeholder="tu@ejemplo.com" value="" required>
+                        <div class="invalid-feedback">
+                          Ingrese una dirección de correo electrónico válida.
+                        </div>
+                    </div>
+                  </div>
+
+                  <!-- Campos para Intendencia -->
+                  <div id="camposIntendencia" *ngSwitchCase="'5'">
+                    <div class="col-sm-4">
+                        <label for="correoAdmin" class="form-label">Correo electrónico: </label>
+                        <input type="email" class="form-control" id="correoInten" name="correoInten" placeholder="tu@ejemplo.com" value="" required>
+                        <div class="invalid-feedback">
+                          Ingrese una dirección de correo electrónico válida.
+                        </div>
+                    </div>
+                  </div>
+
+                  <!-- Campos para Cafeteria -->
+                  <div id="camposCafeteria" *ngSwitchCase="'6'">
+                    <div class="col-sm-4">
+                        <label for="correoAdmin" class="form-label">Correo electrónico: </label>
+                        <input type="email" class="form-control" id="correoCafe" name="correoCafe" placeholder="tu@ejemplo.com" value="" required>
+                        <div class="invalid-feedback">
+                          Ingrese una dirección de correo electrónico válida.
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <hr class="my-4">
+
+          <div id="boton">
+            <button id="btnRegistro" class="w-40 btn btn-success btn-lg btnRegistro" type="button">Registrarse</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="regis">
+        <br><p>¿Ya te registraste? <a routerLink="/login">Inicia sesión</a></p>
+    </div>
+</main>

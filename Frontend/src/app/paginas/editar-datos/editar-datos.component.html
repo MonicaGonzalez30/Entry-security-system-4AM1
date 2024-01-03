@@ -1,0 +1,157 @@
+<app-header></app-header>
+
+<div class="cont">
+    <div class="py-5 text-center">
+        <h3>Actualizar datos personales</h3>
+    </div>
+
+    <div class="row 3">
+        <div class="col-12">
+            <div class="row g-3">
+                <div class="col-sm-2">
+                    <img id="photo" src="https://historiadeltiempopresente.com/wp-content/uploads/2021/01/userdefaultimage.jpg" class="rounded float-start" alt="Foto del usuario">
+                    <button id="editFoto" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalCambioFoto"><i class="fas fa-camera"></i> Cambiar foto</button>
+                </div>
+
+                <div class="col-sm-4">
+                    <h6>Nombre</h6>
+                    <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                    <br>
+                    <h6>Tipo de usuario</h6>
+                    <input type="text" class="form-control" id="tipoUsuario" placeholder="" value="" readonly="readonly" [(ngModel)]="tipoUsuario" (ngModelChange)="obtenerTipoUsuario()">
+                    <br>
+                    <p><i class="fa-solid fa-triangle-exclamation"></i> El tipo de usuario y el identificador no pueden modificarse.</p>
+                </div>
+      
+                <div class="col-sm-3">
+                    <h6>Apellido paterno</h6>
+                    <input type="text" class="form-control" id="apePat" placeholder="" value="" required>
+                    <br>
+                    <h6>Identificador</h6>
+                    <input type="text" class="form-control" id="identificador" placeholder="" value="" readonly="readonly">
+                </div>
+
+                <div class="col-sm-3">
+                    <h6>Apellido materno</h6>
+                    <input type="text" class="form-control" id="apeMat" placeholder="" value="" required>
+                    <br>
+                    <h6>Contraseña</h6>
+                    <input type="password" class="form-control" id="contra" placeholder="" value="" required>
+                </div>
+
+                <div class="col-sm-12" id="contTipo" [ngSwitch]="tipoUsuario">
+                    <!-- Campos para Alumnos -->
+                    <div class="row" id="camposAlumno" *ngSwitchCase="1">
+                        <div class="col-sm-3" id="estadoAlumno">
+                            <h6>Estado actual</h6>
+                            <select class="form-select" aria-label="Default select example" id="estado" name="estado">
+                                <option value="0">Inscrito</option>
+                                <option value="1">Egresado</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
+                    </div>
+
+                    <!-- Campos para Maestros -->
+                    <div class="row" id="camposMaestro" *ngSwitchCase="2">
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
+                    </div>
+                
+                    <!-- Campos para Administrativos -->
+                    <div class="row" id="camposAdministrativos" *ngSwitchCase="3">
+                        <div class="col-sm-5">
+                            <h6>Departamento al que pertenece</h6>
+                            <input type="text" class="form-control" id="departamentoAdmin" name="departamentoAdmin" required>
+                        </div>
+                        <div class="col-sm-4" id="correo">
+                            <h6>Correo electrónico</h6>
+                            <input type="email" class="form-control" id="correoAdmin" name="correoAdmin" placeholder="tu@ejemplo.com" value="" required>
+                            <div class="invalid-feedback">
+                              Ingrese una dirección de correo electrónico válida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
+                    </div>
+  
+                    <!-- Campos para Policia -->
+                    <div class="row" id="camposPolicia" *ngSwitchCase="4">
+                        <div class="col-sm-4">
+                            <h6>Correo electrónico</h6>
+                            <input type="email" class="form-control" id="correoPoli" name="correoPoli" placeholder="tu@ejemplo.com" value="" required>
+                            <div class="invalid-feedback">
+                                Ingrese una dirección de correo electrónico válida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
+                    </div>
+  
+                    <!-- Campos para Intendencia -->
+                    <div class="row" id="camposIntendencia" *ngSwitchCase="5">
+                        <div class="col-sm-4">
+                            <h6>Correo electrónico</h6>
+                            <input type="email" class="form-control" id="correoInten" name="correoInten" placeholder="tu@ejemplo.com" value="" required>
+                            <div class="invalid-feedback">
+                                Ingrese una dirección de correo electrónico válida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
+                    </div>
+  
+                    <!-- Campos para Cafeteria -->
+                    <div class="row" id="camposCafeteria" *ngSwitchCase="6">
+                        <div class="col-sm-4">
+                            <h6>Correo electrónico</h6>
+                            <input type="email" class="form-control" id="correoCafe" name="correoCafe" placeholder="tu@ejemplo.com" value="" required>
+                            <div class="invalid-feedback">
+                                Ingrese una dirección de correo electrónico válida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para la foto -->
+    <div class="modal fabe" tabindex="-1" role="dialog" id="modalCambioFoto">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cambiar foto de perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Por favor ingresa la URL de la foto de perfil que deseas colocar:</p>
+                    <input type="text" class="form-control" id="urlFoto" placeholder="url" value="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="cambiarFoto()">Aceptar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,44 @@
+.row{
+    width: 100%;
+    height: 100%;
+    padding-top: 12%;
+    padding-bottom: 12%;
+
+    font-family: 'Open Sans', sans-serif;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/006/897/557/non_2x/elegant-blue-wave-abstract-background-abstract-blue-wave-gradient-background-illustration-vector.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#bienvenida{
+    text-align: center;
+    align-content: center;
+}
+
+.card{
+    width: 100%;
+    text-align: center;
+}
+
+.input-group{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 10px; 
+}
+
+.input-group-prepend{
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.checkbox{
+    display: flex;
+    justify-content: start;
+}

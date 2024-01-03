@@ -1,0 +1,31 @@
+.row{
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.cont{
+    background-color: rgb(215, 236, 254);
+}
+
+.btn{
+    text-align: start;
+}
+
+.card{
+    text-align: justify;
+    background-color: rgb(150, 228, 252);
+}
+
+.collapse{
+    padding-bottom: 2%;
+}
+
+#imagen{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    max-width: 80%;
+}
