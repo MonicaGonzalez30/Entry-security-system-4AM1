@@ -39,25 +39,37 @@
                     <input type="password" class="form-control" id="contra" placeholder="" value="" required>
                 </div>
 
-                <div class="col-sm-11" id="contTipo" [ngSwitch]="tipoUsuario">
-                    <!-- Campos específicos para cada tipo de usuario -->
-                    <div id="camposAlumno" *ngSwitchCase="'1'">
-                        <div class="col-sm-4" id="estadoAlumno">
+                <div class="col-sm-12" id="contTipo" [ngSwitch]="tipoUsuario">
+                    <!-- Campos para Alumnos -->
+                    <div class="row" id="camposAlumno" *ngSwitchCase="1">
+                        <div class="col-sm-3" id="estadoAlumno">
                             <h6>Estado actual</h6>
                             <select class="form-select" aria-label="Default select example" id="estado" name="estado">
                                 <option value="0">Inscrito</option>
                                 <option value="1">Egresado</option>
                             </select>
                         </div>
+
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
+                    </div>
+
+                    <!-- Campos para Maestros -->
+                    <div class="row" id="camposMaestro" *ngSwitchCase="2">
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
                     </div>
                 
                     <!-- Campos para Administrativos -->
-                    <div id="camposAdministrativos" *ngSwitchCase="'3'">
+                    <div class="row" id="camposAdministrativos" *ngSwitchCase="3">
                         <div class="col-sm-5">
                             <h6>Departamento al que pertenece</h6>
                             <input type="text" class="form-control" id="departamentoAdmin" name="departamentoAdmin" required>
                         </div>
-  
                         <div class="col-sm-4" id="correo">
                             <h6>Correo electrónico</h6>
                             <input type="email" class="form-control" id="correoAdmin" name="correoAdmin" placeholder="tu@ejemplo.com" value="" required>
@@ -65,44 +77,56 @@
                               Ingrese una dirección de correo electrónico válida.
                             </div>
                         </div>
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
                     </div>
   
                     <!-- Campos para Policia -->
-                    <div id="camposPolicia" *ngSwitchCase="'4'">
-                      <div class="col-sm-4">
-                          <h6>Correo electrónico</h6>
-                          <input type="email" class="form-control" id="correoPoli" name="correoPoli" placeholder="tu@ejemplo.com" value="" required>
-                          <div class="invalid-feedback">
-                            Ingrese una dirección de correo electrónico válida.
-                          </div>
-                      </div>
+                    <div class="row" id="camposPolicia" *ngSwitchCase="4">
+                        <div class="col-sm-4">
+                            <h6>Correo electrónico</h6>
+                            <input type="email" class="form-control" id="correoPoli" name="correoPoli" placeholder="tu@ejemplo.com" value="" required>
+                            <div class="invalid-feedback">
+                                Ingrese una dirección de correo electrónico válida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
                     </div>
   
                     <!-- Campos para Intendencia -->
-                    <div id="camposIntendencia" *ngSwitchCase="'5'">
-                      <div class="col-sm-4">
-                          <h6>Correo electrónico</h6>
-                          <input type="email" class="form-control" id="correoInten" name="correoInten" placeholder="tu@ejemplo.com" value="" required>
-                          <div class="invalid-feedback">
-                            Ingrese una dirección de correo electrónico válida.
-                          </div>
-                      </div>
+                    <div class="row" id="camposIntendencia" *ngSwitchCase="5">
+                        <div class="col-sm-4">
+                            <h6>Correo electrónico</h6>
+                            <input type="email" class="form-control" id="correoInten" name="correoInten" placeholder="tu@ejemplo.com" value="" required>
+                            <div class="invalid-feedback">
+                                Ingrese una dirección de correo electrónico válida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
                     </div>
   
                     <!-- Campos para Cafeteria -->
-                    <div id="camposCafeteria" *ngSwitchCase="'6'">
-                      <div class="col-sm-4">
-                          <h6>Correo electrónico</h6>
-                          <input type="email" class="form-control" id="correoCafe" name="correoCafe" placeholder="tu@ejemplo.com" value="" required>
-                          <div class="invalid-feedback">
-                            Ingrese una dirección de correo electrónico válida.
-                          </div>
-                      </div>
+                    <div class="row" id="camposCafeteria" *ngSwitchCase="6">
+                        <div class="col-sm-4">
+                            <h6>Correo electrónico</h6>
+                            <input type="email" class="form-control" id="correoCafe" name="correoCafe" placeholder="tu@ejemplo.com" value="" required>
+                            <div class="invalid-feedback">
+                                Ingrese una dirección de correo electrónico válida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <br>
+                            <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
+                        </div>
                     </div>
-
-                  <div class="col-2">
-                      <button id="guardar" type="button" class="btn btn-primary" onclick="guardarInf()"><i class="fas fa-user-edit"></i> Guardar información</button>
-                  </div>
                 </div>
             </div>
         </div>
