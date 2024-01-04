@@ -8,7 +8,7 @@ namespace ProyectoBack.Controllers
 {
     [ApiController]
     [Route("Alumno")]
-    public class AlumnoControllers : ControllerBase
+    public class AlumnoController : ControllerBase
     {
         [HttpGet]
         public JsonResult GetAlumnos()
@@ -21,11 +21,13 @@ namespace ProyectoBack.Controllers
                 {
                     alumnosList.Add(new Alumno
                     {
-                        Boleta = alumno.Boleta,
-                        Contraseña = alumno.Contraseña,
-                        NombreCompleto = alumno.NombreCompleto,
-                        Foto = alumno.Foto,
-                        EstadoActual = alumno.EstadoActual
+                        boleta = alumno.boleta,
+                        password = alumno.password,
+                        name = alumno.name,
+                        apePat = alumno.apePat,
+                        apeMat = alumno.apeMat,
+                        photo = alumno.photo,
+                        estado = alumno.estado
                     });
                 }
             }
@@ -52,7 +54,7 @@ namespace ProyectoBack.Controllers
             bool success = false;
             using (ContextoAPP contexto = new ContextoAPP())
             {
-                var existingAlumno = contexto.Alumnos.SingleOrDefault(a => a.Boleta == alumno.Boleta);
+                var existingAlumno = contexto.Alumnos.SingleOrDefault(a => a.boleta == alumno.boleta);
                 if (existingAlumno != null)
                 {
                     contexto.Entry(existingAlumno).State = EntityState.Detached;
@@ -71,7 +73,7 @@ namespace ProyectoBack.Controllers
             bool success = false;
             using (ContextoAPP contexto = new ContextoAPP())
             {
-                var existingAlumno = contexto.Alumnos.SingleOrDefault(a => a.Boleta == alumno.Boleta);
+                var existingAlumno = contexto.Alumnos.SingleOrDefault(a => a.boleta == alumno.boleta);
                 if (existingAlumno != null)
                 {
                     contexto.Entry(existingAlumno).State = EntityState.Detached;

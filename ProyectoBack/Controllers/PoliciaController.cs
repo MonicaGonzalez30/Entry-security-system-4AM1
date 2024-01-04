@@ -7,39 +7,40 @@ using ProyectoBack.Model;
 namespace ProyectoBack.Controllers
 {
     [ApiController]
-    [Route("PersonalGeneral")]
-    public class PersonalGeneralController : ControllerBase
+    [Route("Policia")]
+    public class PoliciaController : ControllerBase
     {
         [HttpGet]
-        public JsonResult GetPersonalGeneral()
+        public JsonResult GetPolicia()
         {
-            List<PersonalGeneral> personalGeneralList = new List<PersonalGeneral>();
+            List<Policia> PoliciaList = new List<Policia>();
             using (ContextoAPP contexto = new ContextoAPP())
             {
-                var personalGeneral = contexto.PersonalG;
-                foreach (var empleado in personalGeneral)
+                var Policia = contexto.Policia;
+                foreach (var empleado in Policia)
                 {
-                    personalGeneralList.Add(new PersonalGeneral
+                    PoliciaList.Add(new Policia
                     {
-                        IdentificadorDelPersonal = empleado.IdentificadorDelPersonal,
-                        Contraseña = empleado.Contraseña,
-                        NombreCompleto = empleado.NombreCompleto,
-                        Foto = empleado.Foto,
-                        Puesto = empleado.Puesto,
-                        CorreoElectronico = empleado.CorreoElectronico
+                        idPoli = empleado.idPoli,
+                        password = empleado.password,
+                        name = empleado.name,
+                        apePat = empleado.apePat,
+                        apeMat = empleado.apeMat,
+                        photo = empleado.photo,
+                        correoPoli = empleado.correoPoli
                     });
                 }
             }
-            return new JsonResult(personalGeneralList);
+            return new JsonResult(PoliciaList);
         }
 
         [HttpPost]
-        public JsonResult PostPersonalGeneral([FromBody] PersonalGeneral empleado)
+        public JsonResult PostPolicia([FromBody] Policia empleado)
         {
             bool success = false;
             using (ContextoAPP contexto = new ContextoAPP())
             {
-                contexto.PersonalG.Add(empleado);
+                contexto.Policia.Add(empleado);
                 contexto.SaveChanges();
                 success = true;
             }
@@ -48,16 +49,16 @@ namespace ProyectoBack.Controllers
         }
 
         [HttpPatch]
-        public JsonResult PatchPersonalGeneral([FromBody] PersonalGeneral empleado)
+        public JsonResult PatchPolicia([FromBody] Policia empleado)
         {
             bool success = false;
             using (ContextoAPP contexto = new ContextoAPP())
             {
-                var existingEmpleado = contexto.PersonalG.SingleOrDefault(e => e.IdentificadorDelPersonal == empleado.IdentificadorDelPersonal);
+                var existingEmpleado = contexto.Policia.SingleOrDefault(e => e.idPoli == empleado.idPoli);
                 if (existingEmpleado != null)
                 {
                     contexto.Entry(existingEmpleado).State = EntityState.Detached;
-                    contexto.PersonalG.Attach(empleado);
+                    contexto.Policia.Attach(empleado);
                     contexto.Entry(empleado).State = EntityState.Modified;
                     contexto.SaveChanges();
                     success = true;
@@ -67,16 +68,16 @@ namespace ProyectoBack.Controllers
         }
 
         [HttpDelete]
-        public JsonResult DeletePersonalGeneral([FromBody] PersonalGeneral empleado)
+        public JsonResult DeletePolicia([FromBody] Policia empleado)
         {
             bool success = false;
             using (ContextoAPP contexto = new ContextoAPP())
             {
-                var existingEmpleado = contexto.PersonalG.SingleOrDefault(e => e.IdentificadorDelPersonal == empleado.IdentificadorDelPersonal);
+                var existingEmpleado = contexto.Policia.SingleOrDefault(e => e.idPoli == empleado.idPoli);
                 if (existingEmpleado != null)
                 {
                     contexto.Entry(existingEmpleado).State = EntityState.Detached;
-                    contexto.PersonalG.Attach(empleado);
+                    contexto.Policia.Attach(empleado);
                     contexto.Entry(empleado).State = EntityState.Deleted;
                     contexto.SaveChanges();
                     success = true;
