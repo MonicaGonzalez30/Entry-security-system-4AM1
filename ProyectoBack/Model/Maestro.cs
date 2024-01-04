@@ -2,9 +2,11 @@
 {
     public class Maestro
     {
-        public string IdentificadorDeMaestro { get; set; }
-        public string Contraseña { get; set; }
-        public string NombreCompleto { get; set; }
-        public string Foto { get; set; }
+        public string idMaestro { get; set; }
+        public string password { get; set; }
+        public string name { get; set; }
+        public string apePat { get; set; }
+        public string apeMat { get; set; }
+        public string photo { get; set; }
     }
 }

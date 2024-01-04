@@ -39,3 +39,4 @@ C:\Users\rodja\source\repos\Entry-security-system-4AM1-main\ProyectoBack\ApiProy
 C:\Users\rodja\source\repos\Entry-security-system-4AM1-main\ProyectoBack\ApiProyectoBack\obj\Debug\net6.0\ApiProyectoBack.pdb
 C:\Users\rodja\source\repos\Entry-security-system-4AM1-main\ProyectoBack\ApiProyectoBack\obj\Debug\net6.0\ApiProyectoBack.genruntimeconfig.cache
 C:\Users\rodja\source\repos\Entry-security-system-4AM1-main\ProyectoBack\ApiProyectoBack\obj\Debug\net6.0\ref\ApiProyectoBack.dll
+C:\Users\rodja\source\repos\Entry-security-system-4AM1-main\ProyectoBack\ApiProyectoBack\obj\Debug\net6.0\ApiProyectoBack.sourcelink.json

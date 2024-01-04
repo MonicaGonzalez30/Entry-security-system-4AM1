@@ -21,12 +21,14 @@ namespace ProyectoBack.Controllers
                 {
                     administrativosList.Add(new Administrativo
                     {
-                        IdentificadorDelAdministrativo = administrativo.IdentificadorDelAdministrativo,
-                        Contraseña = administrativo.Contraseña,
-                        NombreCompleto = administrativo.NombreCompleto,
-                        Foto = administrativo.Foto,
-                        Departamento = administrativo.Departamento,
-                        CorreoElectronico = administrativo.CorreoElectronico
+                        idAdmin = administrativo.idAdmin,
+                        password = administrativo.password,
+                        name = administrativo.name,
+                        apePat = administrativo.apePat,
+                        apeMat = administrativo.apeMat,
+                        photo = administrativo.photo,
+                        departamentoAdmin = administrativo.departamentoAdmin,
+                        correoAdmin = administrativo.correoAdmin
                     });
                 }
             }
@@ -53,7 +55,7 @@ namespace ProyectoBack.Controllers
             bool success = false;
             using (ContextoAPP contexto = new ContextoAPP())
             {
-                var existingAdministrativo = contexto.Administrativos.SingleOrDefault(a => a.IdentificadorDelAdministrativo == administrativo.IdentificadorDelAdministrativo);
+                var existingAdministrativo = contexto.Administrativos.SingleOrDefault(a => a.idAdmin == administrativo.idAdmin);
                 if (existingAdministrativo != null)
                 {
                     contexto.Entry(existingAdministrativo).State = EntityState.Detached;
@@ -72,7 +74,7 @@ namespace ProyectoBack.Controllers
             bool success = false;
             using (ContextoAPP contexto = new ContextoAPP())
             {
-                var existingAdministrativo = contexto.Administrativos.SingleOrDefault(a => a.IdentificadorDelAdministrativo == administrativo.IdentificadorDelAdministrativo);
+                var existingAdministrativo = contexto.Administrativos.SingleOrDefault(a => a.idAdmin == administrativo.idAdmin);
                 if (existingAdministrativo != null)
                 {
                     contexto.Entry(existingAdministrativo).State = EntityState.Detached;
