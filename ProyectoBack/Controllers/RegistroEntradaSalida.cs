@@ -24,7 +24,7 @@ namespace ProyectoBack.Controllers
                         ID = registro.ID,
                         Fecha = registro.Fecha,
                         Hora = registro.Hora,
-                        IDUsuario = registro.IDUsuario,
+                        idUsuario = registro.idUsuario,
                         TipoUsuario = registro.TipoUsuario,
                         Instalacion = registro.Instalacion,
                     });

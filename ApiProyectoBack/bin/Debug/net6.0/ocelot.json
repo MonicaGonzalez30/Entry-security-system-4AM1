@@ -49,7 +49,7 @@
       "UpstreamHttpMethod": []
     },
     {
-      "DownstreamPathTemplate": "/PersonalGeneral",
+      "DownstreamPathTemplate": "/Policia",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -57,7 +57,31 @@
           "Port": 7182
         }
       ],
-      "UpstreamPathTemplate": "/PersonalGeneralApi",
+      "UpstreamPathTemplate": "/PoliciaApi",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/Intendencia",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7182
+        }
+      ],
+      "UpstreamPathTemplate": "/IntendenciaApi",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/Cafeteria",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7182
+        }
+      ],
+      "UpstreamPathTemplate": "/CafeteriaApi",
       "UpstreamHttpMethod": []
     },
     {

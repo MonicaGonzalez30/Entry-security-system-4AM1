@@ -134,3 +134,4 @@ C:\Users\rodja\source\repos\Entry-security-system-4AM1-main\ProyectoBack\Proyect
 C:\Users\rodja\source\repos\Entry-security-system-4AM1-main\ProyectoBack\ProyectoBack\obj\Debug\net6.0\ProyectoBack.csproj.CopyComplete
 C:\Users\rodja\source\repos\Entry-security-system-4AM1-main\ProyectoBack\ProyectoBack\obj\Debug\net6.0\ProyectoBack.genruntimeconfig.cache
 C:\Users\rodja\source\repos\Entry-security-system-4AM1-main\ProyectoBack\ProyectoBack\obj\Debug\net6.0\ref\ProyectoBack.dll
+C:\Users\rodja\source\repos\Entry-security-system-4AM1-main\ProyectoBack\ProyectoBack\obj\Debug\net6.0\ProyectoBack.sourcelink.json

@@ -21,10 +21,12 @@ namespace ProyectoBack.Controllers
                 {
                     maestrosList.Add(new Maestro
                     {
-                        IdentificadorDeMaestro = maestro.IdentificadorDeMaestro,
-                        Contraseña = maestro.Contraseña,
-                        NombreCompleto = maestro.NombreCompleto,
-                        Foto = maestro.Foto
+                        idMaestro = maestro.idMaestro,
+                        password = maestro.password,
+                        name = maestro.name,
+                        apePat = maestro.apePat,
+                        apeMat = maestro.apeMat,
+                        photo = maestro.photo
                     });
                 }
             }
@@ -51,7 +53,7 @@ namespace ProyectoBack.Controllers
             bool success = false;
             using (ContextoAPP contexto = new ContextoAPP())
             {
-                var existingMaestro = contexto.Maestros.SingleOrDefault(m => m.IdentificadorDeMaestro == maestro.IdentificadorDeMaestro);
+                var existingMaestro = contexto.Maestros.SingleOrDefault(m => m.idMaestro == maestro.idMaestro);
                 if (existingMaestro != null)
                 {
                     contexto.Entry(existingMaestro).State = EntityState.Detached;
@@ -70,7 +72,7 @@ namespace ProyectoBack.Controllers
             bool success = false;
             using (ContextoAPP contexto = new ContextoAPP())
             {
-                var existingMaestro = contexto.Maestros.SingleOrDefault(m => m.IdentificadorDeMaestro == maestro.IdentificadorDeMaestro);
+                var existingMaestro = contexto.Maestros.SingleOrDefault(m => m.idMaestro == maestro.idMaestro);
                 if (existingMaestro != null)
                 {
                     contexto.Entry(existingMaestro).State = EntityState.Detached;
