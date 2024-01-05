@@ -60,7 +60,12 @@ export class RegistroComponent {
   public Registrar(){
     if(this.tipoUsuario == 1){
       this.rService.PostAlumno(this.boleta, this.password, this.nombre, this.apPat, this.apMat, this.estado).subscribe(resultado => {
-        console.log(resultado);
+        if(resultado){
+          alert("Registro exitoso.")
+        }
+        else{
+          alert("Error: No pudo realizarse el registro.")
+        }
       });
     }
     else if(this.tipoUsuario == 2){
