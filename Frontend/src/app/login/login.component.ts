@@ -18,8 +18,12 @@ export class LoginComponent {
 
   public Iniciar(){
     this.uService.LoginUser(this.idUsuario, this.password).subscribe(resultado => {
-      //console.log(resultado);
-      this.ruteador.navigate(["preguntas"]);
+      if(resultado){
+        this.ruteador.navigate(["codigo"]);
+      }
+      else{
+        alert("Identificador de usuario o contraseña incorrectos.")
+      }
     });
   }
 }
