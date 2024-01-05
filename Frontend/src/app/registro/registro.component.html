@@ -23,7 +23,7 @@
               
               <div class="col-sm-5">
                   <label for="name" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                  <input type="text" class="form-control" id="name" placeholder="" value="" required [(ngModel)]="nombre">
                   <div class="invalid-feedback">
                   Se requiere un nombre válido.
                   </div>
@@ -31,7 +31,7 @@
   
               <div class="col-sm-4">
                   <label for="apePat" class="form-label">Apellido paterno</label>
-                  <input type="text" class="form-control" id="apePat" placeholder="" value="" required>
+                  <input type="text" class="form-control" id="apePat" placeholder="" value="" required [(ngModel)]="apPat">
                   <div class="invalid-feedback">
                   Se requiere un apellido paterno válido.
                   </div>
@@ -39,7 +39,7 @@
 
               <div class="col-sm-4">
                   <label for="apeMat" class="form-label">Apellido materno</label>
-                  <input type="text" class="form-control" id="apeMat" placeholder="" value="" required>
+                  <input type="text" class="form-control" id="apeMat" placeholder="" value="" required [(ngModel)]="apMat">
                   <div class="invalid-feedback">
                   Se requiere un apellido materno válido.
                   </div>
@@ -47,7 +47,7 @@
   
               <div class="col-sm-3">
                   <label for="password" class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="password" placeholder="" value="" required>
+                  <input type="password" class="form-control" id="password" placeholder="" value="" required [(ngModel)]="password">
                   <div class="invalid-feedback">
                   Ingrese una contraseña con 8 dígitos que contenga numeros, letras y caracteres especiales.
                   </div>
@@ -58,12 +58,12 @@
                   <div id="camposAlumno" *ngSwitchCase="'1'">
                       <div class="col-sm-3">
                           <label for="boleta" class="form-label">Boleta: </label>
-                          <input type="text" class="form-control" id="boleta" name="boleta" required>
+                          <input type="text" class="form-control" id="boleta" name="boleta" required [(ngModel)]="boleta">
                       </div>
                       
                       <div class="col-sm-4" id="estadoAlumno">
                           <label for="estado" class="form-label">Estado actual: </label>
-                          <select class="form-select" aria-label="Default select example" id="estado" name="estado">
+                          <select class="form-select" aria-label="Default select example" id="estado" name="estado" [(ngModel)]="estadoA" (ngModelChange)="obtenerEstado()">
                               <option value="0">Inscrito</option>
                               <option value="1">Egresado</option>
                           </select>
@@ -74,7 +74,7 @@
                   <div id="camposMaestro" *ngSwitchCase="'2'">
                       <div class="col-sm-3">
                           <label for="idMaestro" class="form-label">Id del maestro: </label>
-                          <input type="text" class="form-control" id="idMaestro" name="idMaestro">
+                          <input type="text" class="form-control" id="idMaestro" name="idMaestro" required [(ngModel)]="idMaestro">
                       </div>
                   </div>
               
@@ -82,12 +82,12 @@
                   <div id="camposAdministrativos" *ngSwitchCase="'3'">
                       <div class="col-sm-5">
                           <label for="departamentoAdmin" class="form-label">Departamento al que pertenece: </label>
-                          <input type="text" class="form-control" id="departamentoAdmin" name="departamentoAdmin">
+                          <input type="text" class="form-control" id="departamentoAdmin" name="departamentoAdmin" [(ngModel)]="depto">
                       </div>
 
                       <div class="col-sm-4" id="correo">
                           <label for="correoAdmin" class="form-label">Correo electrónico: </label>
-                          <input type="email" class="form-control" id="correoAdmin" name="correoAdmin" placeholder="tu@ejemplo.com" value="" required>
+                          <input type="email" class="form-control" id="correoAdmin" name="correoAdmin" placeholder="tu@ejemplo.com" value="" required [(ngModel)]="correoA">
                           <div class="invalid-feedback">
                             Ingrese una dirección de correo electrónico válida.
                           </div>
@@ -98,7 +98,7 @@
                   <div id="camposPolicia" *ngSwitchCase="'4'">
                     <div class="col-sm-4">
                         <label for="correoAdmin" class="form-label">Correo electrónico: </label>
-                        <input type="email" class="form-control" id="correoPoli" name="correoPoli" placeholder="tu@ejemplo.com" value="" required>
+                        <input type="email" class="form-control" id="correoPoli" name="correoPoli" placeholder="tu@ejemplo.com" value="" required [(ngModel)]="correoP">
                         <div class="invalid-feedback">
                           Ingrese una dirección de correo electrónico válida.
                         </div>
@@ -109,7 +109,7 @@
                   <div id="camposIntendencia" *ngSwitchCase="'5'">
                     <div class="col-sm-4">
                         <label for="correoAdmin" class="form-label">Correo electrónico: </label>
-                        <input type="email" class="form-control" id="correoInten" name="correoInten" placeholder="tu@ejemplo.com" value="" required>
+                        <input type="email" class="form-control" id="correoInten" name="correoInten" placeholder="tu@ejemplo.com" value="" required [(ngModel)]="correoI">
                         <div class="invalid-feedback">
                           Ingrese una dirección de correo electrónico válida.
                         </div>
@@ -120,7 +120,7 @@
                   <div id="camposCafeteria" *ngSwitchCase="'6'">
                     <div class="col-sm-4">
                         <label for="correoAdmin" class="form-label">Correo electrónico: </label>
-                        <input type="email" class="form-control" id="correoCafe" name="correoCafe" placeholder="tu@ejemplo.com" value="" required>
+                        <input type="email" class="form-control" id="correoCafe" name="correoCafe" placeholder="tu@ejemplo.com" value="" required [(ngModel)]="correoC">
                         <div class="invalid-feedback">
                           Ingrese una dirección de correo electrónico válida.
                         </div>
@@ -131,7 +131,7 @@
           <hr class="my-4">
 
           <div id="boton">
-            <button id="btnRegistro" class="w-40 btn btn-success btn-lg btnRegistro" type="button">Registrarse</button>
+            <button (click)="Registrar()" id="btnRegistro" class="w-40 btn btn-success btn-lg btnRegistro" type="button">Registrarse</button>
           </div>
         </div>
       </div>

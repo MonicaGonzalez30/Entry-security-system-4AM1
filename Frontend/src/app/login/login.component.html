@@ -17,13 +17,13 @@
                             <div class="input-group-prepend">
                                 <span><i class="fa-solid fa-key"></i></span>
                             </div>
-                            <input id="identificador" class="form-control" placeholder="Identificador" type="text" pattern="[A-Z0-9]+" title="Ingrese un identificador válido (número de boleta o identificador asignado)" required autofocus>
+                            <input id="identificador" class="form-control" placeholder="Identificador" type="text" pattern="[A-Z0-9]+" title="Ingrese un identificador válido (número de boleta o identificador asignado)" required autofocus [(ngModel)]="idUsuario">
                         </div>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span><i class="fa-solid fa-unlock-keyhole"></i></span>
                             </div>
-                            <input id="contra" class="form-control" placeholder="Contraseña" type="password" required>
+                            <input id="contra" class="form-control" placeholder="Contraseña" type="password" required [(ngModel)]="password">
                         </div>
                         <div class="checkbox mb-3">
                             <label>
@@ -33,7 +33,7 @@
                     </div>
                 </ul>
                 <div class="card-footer">
-                    <a routerLink="/preguntas" class="btn btn-primary">Iniciar sesión</a>
+                    <a (click)="Iniciar()" class="btn btn-primary">Iniciar sesión</a>
                 </div>
             </div>
         </div>
