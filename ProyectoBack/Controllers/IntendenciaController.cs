@@ -6,8 +6,8 @@ using ProyectoBack.Model;
 
 namespace ProyectoBack.Controllers
 {
+    [Route("[controller]/datos")]
     [ApiController]
-    [Route("Intendencia")]
     public class IntendenciaController : ControllerBase
     {
         [HttpGet]
@@ -85,5 +85,33 @@ namespace ProyectoBack.Controllers
             }
             return new JsonResult(success);
         }
+
+        [HttpGet("{id}")]
+        public JsonResult GetIntendenciaById(string id)
+        {
+            using (ContextoAPP Contexto = new ContextoAPP())
+            {
+                var intendencia = Contexto.Intendencia.Find(id);
+                if (intendencia != null)
+                {
+                    // Devuelve la información de la intendencia si se encuentra
+                    return new JsonResult(new Intendencia
+                    {
+                        idInten = intendencia.idInten,
+                        name = intendencia.name,
+                        apePat = intendencia.apePat,
+                        apeMat = intendencia.apeMat,
+                        photo = intendencia.photo,
+                        correoInten = intendencia.correoInten
+                    });
+                }
+                else
+                {
+                    // Devuelve un mensaje indicando que no se encontró la intendencia con el ID especificado
+                    return new JsonResult($"No se ha encontrado un registro de intendencia con el ID {id}");
+                }
+            }
+        }
+
     }
 }

@@ -16,7 +16,7 @@ namespace ProyectoBack.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=localhost;database=ProyectoBaseV1.2;user=root;password=root");
+            optionsBuilder.UseMySQL("server=localhost;database=ProyectoBaseV3;user=root;password=root");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -6,8 +6,8 @@ using ProyectoBack.Model;
 
 namespace ProyectoBack.Controllers
 {
+    [Route("[controller]/datos")]
     [ApiController]
-    [Route("Administrativo")]
     public class AdministrativoController : ControllerBase
     {
         [HttpGet]
@@ -85,6 +85,33 @@ namespace ProyectoBack.Controllers
                 }
             }
             return new JsonResult(success);
+        }
+
+        [HttpGet("{id}")]
+        public JsonResult GetAdministrativoById(string id)
+        {
+            using (ContextoAPP Contexto = new ContextoAPP())
+            {
+                var administrativo = Contexto.Administrativos.Find(id);
+                if (administrativo != null)
+                {
+                    // Devuelve la información del administrador si se encuentra
+                    return new JsonResult(new Administrativo
+                    {
+                        idAdmin = administrativo.idAdmin,
+                        name = administrativo.name,
+                        apePat = administrativo.apePat,
+                        apeMat = administrativo.apeMat,
+                        photo = administrativo.photo,
+
+                    });
+                }
+                else
+                {
+                    // Devuelve un mensaje indicando que no se encontró el administrador con el ID especificado
+                    return new JsonResult($"No se ha encontrado un registro de administrativo con el ID {id}");
+                }
+            }
         }
     }
 }
