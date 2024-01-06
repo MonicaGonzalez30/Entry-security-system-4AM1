@@ -1,7 +1,19 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/Alumno",
+      "DownstreamPathTemplate": "/RegistroEntradaSalida",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7182
+        }
+      ],
+      "UpstreamPathTemplate": "/RegistroEntradaSalidaApi",
+      "UpstreamHttpMethod": []
+    },//
+    {
+      "DownstreamPathTemplate": "/Alumno/datos/id",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -13,19 +25,7 @@
       "UpstreamHttpMethod": []
     },
     {
-      "DownstreamPathTemplate": "/Maestro",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7182
-        }
-      ],
-      "UpstreamPathTemplate": "/MaestroApi",
-      "UpstreamHttpMethod": []
-    },
-    {
-      "DownstreamPathTemplate": "/Administrativo",
+      "DownstreamPathTemplate": "/Administrativo/datos/id",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -37,43 +37,7 @@
       "UpstreamHttpMethod": []
     },
     {
-      "DownstreamPathTemplate": "/Login",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7182
-        }
-      ],
-      "UpstreamPathTemplate": "/LoginApi",
-      "UpstreamHttpMethod": []
-    },
-    {
-      "DownstreamPathTemplate": "/Policia",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7182
-        }
-      ],
-      "UpstreamPathTemplate": "/PoliciaApi",
-      "UpstreamHttpMethod": []
-    },
-    {
-      "DownstreamPathTemplate": "/Intendencia",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7182
-        }
-      ],
-      "UpstreamPathTemplate": "/IntendenciaApi",
-      "UpstreamHttpMethod": []
-    },
-    {
-      "DownstreamPathTemplate": "/Cafeteria",
+      "DownstreamPathTemplate": "/Cafeteria/datos/id",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -85,7 +49,7 @@
       "UpstreamHttpMethod": []
     },
     {
-      "DownstreamPathTemplate": "/RegistroEntradaSalida",
+      "DownstreamPathTemplate": "/Intendencia/datos/id",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -93,7 +57,31 @@
           "Port": 7182
         }
       ],
-      "UpstreamPathTemplate": "/RegistroEntradaSalidaApi",
+      "UpstreamPathTemplate": "/IntendenciaApi",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/Maestro/datos/id",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7182
+        }
+      ],
+      "UpstreamPathTemplate": "/MaestroApi",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/Policia/datos/id",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7182
+        }
+      ],
+      "UpstreamPathTemplate": "/PoliciaApi",
       "UpstreamHttpMethod": []
     }
   ],

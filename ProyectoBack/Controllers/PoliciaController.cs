@@ -6,8 +6,8 @@ using ProyectoBack.Model;
 
 namespace ProyectoBack.Controllers
 {
+    [Route("[controller]/datos")]
     [ApiController]
-    [Route("Policia")]
     public class PoliciaController : ControllerBase
     {
         [HttpGet]
@@ -85,5 +85,33 @@ namespace ProyectoBack.Controllers
             }
             return new JsonResult(success);
         }
+
+        [HttpGet("{id}")]
+        public JsonResult GetPoliciaById(string id)
+        {
+            using (ContextoAPP Contexto = new ContextoAPP())
+            {
+                var policia = Contexto.Policia.Find(id);
+                if (policia != null)
+                {
+                    // Devuelve la información del policia si se encuentra
+                    return new JsonResult(new Policia
+                    {
+                        idPoli = policia.idPoli,
+                        name = policia.name,
+                        apePat = policia.apePat,
+                        apeMat = policia.apeMat,
+                        photo = policia.photo,
+                        correoPoli = policia.correoPoli
+                    });
+                }
+                else
+                {
+                    // Devuelve un mensaje indicando que no se encontró el policia con el ID especificado
+                    return new JsonResult($"No se ha encontrado un registro de policia con el ID {id}");
+                }
+            }
+        }
+
     }
 }

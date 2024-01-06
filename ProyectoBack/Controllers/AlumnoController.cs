@@ -6,8 +6,8 @@ using ProyectoBack.Model;
 
 namespace ProyectoBack.Controllers
 {
+    [Route("[controller]/datos")]
     [ApiController]
-    [Route("Alumno")]
     public class AlumnoController : ControllerBase
     {
         [HttpGet]
@@ -85,5 +85,31 @@ namespace ProyectoBack.Controllers
             }
             return new JsonResult(success);
         }
+
+        [HttpGet("{id}")]
+        public JsonResult GetAlumnoById(string id)
+        {
+            using (ContextoAPP Contexto = new ContextoAPP())
+            {
+                var alumno = Contexto.Alumnos.Find(id);
+                if (alumno != null)
+                {
+                    return new JsonResult(new Alumno
+                    {
+                        boleta = alumno.boleta,
+                        name = alumno.name,
+                        apePat = alumno.apePat,
+                        apeMat = alumno.apeMat,
+                        photo = alumno.photo,
+                        estado = alumno.estado
+                    });
+                }
+                else
+                {
+                    return new JsonResult($"No se ha encontrado un registro de alumno con la boleta {id}");
+                }
+            }
+        }
+
     }
 }
