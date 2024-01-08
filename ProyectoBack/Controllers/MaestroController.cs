@@ -6,8 +6,8 @@ using ProyectoBack.Model;
 
 namespace ProyectoBack.Controllers
 {
+    [Route("[controller]/datos")]
     [ApiController]
-    [Route("Maestro")]
     public class MaestroController : ControllerBase
     {
         [HttpGet]
@@ -84,5 +84,32 @@ namespace ProyectoBack.Controllers
             }
             return new JsonResult(success);
         }
+
+        [HttpGet("{id}")]
+        public JsonResult GetMaestroById(string id)
+        {
+            using (ContextoAPP Contexto = new ContextoAPP())
+            {
+                var maestro = Contexto.Maestros.Find(id);
+                if (maestro != null)
+                {
+                    // Devuelve la información del maestro si se encuentra
+                    return new JsonResult(new Maestro
+                    {
+                        password = maestro.password,
+                        name = maestro.name,
+                        apePat = maestro.apePat,
+                        apeMat = maestro.apeMat,
+                        photo = maestro.photo
+                    });
+                }
+                else
+                {
+                    // Devuelve un mensaje indicando que no se encontró el maestro con el ID especificado
+                    return new JsonResult($"No se ha encontrado un registro de maestro con el ID {id}");
+                }
+            }
+        }
+
     }
 }

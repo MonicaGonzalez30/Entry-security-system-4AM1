@@ -6,8 +6,8 @@ using ProyectoBack.Model;
 
 namespace ProyectoBack.Controllers
 {
+    [Route("[controller]/datos")]
     [ApiController]
-    [Route("Cafeteria")]
     public class CafeteriaController : ControllerBase
     {
         [HttpGet]
@@ -85,5 +85,31 @@ namespace ProyectoBack.Controllers
             }
             return new JsonResult(success);
         }
+
+        [HttpGet("{id}")]
+        public JsonResult GetCafeteriaById(string id)
+        {
+            using (ContextoAPP Contexto = new ContextoAPP())
+            {
+                var cafeteria = Contexto.Cafeteria.Find(id);
+                if (cafeteria != null)
+                {
+                    return new JsonResult(new Cafeteria
+                    {
+                        password = cafeteria.password,
+                        name = cafeteria.name,
+                        apePat = cafeteria.apePat,
+                        apeMat = cafeteria.apeMat,
+                        photo = cafeteria.photo,
+                        correoCafe = cafeteria.correoCafe
+                    });
+                }
+                else
+                {
+                    return new JsonResult($"No se ha encontrado un registro de cafeteria con el ID {id}");
+                }
+            }
+        }
+
     }
 }
