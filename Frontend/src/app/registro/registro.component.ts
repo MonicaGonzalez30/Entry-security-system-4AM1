@@ -143,49 +143,48 @@ export interface DTO_Maestro{
   password:string,
   name:string,
   apePat:string,
-  apeMat:string
+  apeMat:string,
+  photo:string
 }
 
 export interface DTO_Policia {
-  idPoli: string;
-  password: string;
-  name: string;
-  apePat: string;
-  apeMat: string;
-  correoPoli: string;
+  idPoli: string,
+  password: string,
+  name: string,
+  apePat: string,
+  apeMat: string,
+  photo: string,
+  correoPoli: string
 }
 
 
 export interface DTO_Intendencia {
-  idInten: string;
-  password: string;
-  name: string;
-  apePat: string;
-  apeMat: string;
-  photo: string;
-  correoInten: string;
+  idInten: string,
+  password: string,
+  name: string,
+  apePat: string,
+  apeMat: string,
+  photo: string,
+  correoInten: string
 }
 
 export interface DTO_Cafeteria {
-  idCafe: string;
-  password: string;
-  name: string;
-  apePat: string;
-  apeMat: string;
-  photo: string;
-  correoCafe: string;
+  idCafe: string,
+  password: string,
+  name: string,
+  apePat: string,
+  apeMat: string,
+  photo: string,
+  correoCafe: string
 }
 
 export interface DTO_Administrativo {
-  idAdmin: string;
-  password: string;
-  name: string;
-  apePat: string;
-  apeMat: string;
-  photo: string;
-  departamentoAdmin: string;
-  correoAdmin: string;
+  idAdmin: string,
+  password: string,
+  name: string,
+  apePat: string,
+  apeMat: string,
+  photo: string,
+  departamentoAdmin: string,
+  correoAdmin: string
 }
-
-
-//Agregar aquí los DTO de los demás usuarios (revisa que lleva cada uno, esta en https://github.com/MonicaGonzalez30/Entry-security-system-4AM1/tree/main/ProyectoBack/Model)

@@ -38,48 +38,63 @@ export class RegistroService {
   }
   
   public PostPolicia(password: string, name: string, apePat: string, apeMat: string, correoPoli: string){
+    var numAleatorio = Math.floor(Math.random() * 10000); //Genera un numero entre 0 y 9999
+    const idP = "P202263" + numAleatorio;
     var policiaInfo = {
+      idPoli: idP,
       password: password,
       name: name,
       apePat: apePat,
       apeMat: apeMat,
+      photo: "https://historiadeltiempopresente.com/wp-content/uploads/2021/01/userdefaultimage.jpg",
       correoPoli: correoPoli
     };
     return this.http.post("https://localhost:7276/Policia/datos", JSON.stringify(policiaInfo), this.opcionesHttp);
   }
   
   public PostIntendencia(password: string, name: string, apePat: string, apeMat: string, correoInten: string){
+    var numAleatorio = Math.floor(Math.random() * 10000); //Genera un numero entre 0 y 9999
+    const idI = "I202263" + numAleatorio;
     var intendenciaInfo = {
+      idInten: idI,
       password: password,
       name: name,
       apePat: apePat,
       apeMat: apeMat,
+      photo: "https://historiadeltiempopresente.com/wp-content/uploads/2021/01/userdefaultimage.jpg",
       correoInten: correoInten
     };
     return this.http.post("https://localhost:7276/Intendencia/datos", JSON.stringify(intendenciaInfo), this.opcionesHttp);
   }
   
   public PostCafeteria(password: string, name: string, apePat: string, apeMat: string, correoCafe: string){
+    var numAleatorio = Math.floor(Math.random() * 10000); //Genera un numero entre 0 y 9999
+    const idC = "I202263" + numAleatorio;
     var cafeteriaInfo = {
+      idCafe: idC,
       password: password,
       name: name,
       apePat: apePat,
       apeMat: apeMat,
+      photo: "https://historiadeltiempopresente.com/wp-content/uploads/2021/01/userdefaultimage.jpg",
       correoCafe: correoCafe
     };
     return this.http.post("https://localhost:7276/Cafeteria/datos", JSON.stringify(cafeteriaInfo), this.opcionesHttp);
   }
     
   public PostAdministrativo(password: string, name: string, apePat: string, apeMat: string, departamentoAdmin: string, correoAdmin: string){
+    var numAleatorio = Math.floor(Math.random() * 10000); //Genera un numero entre 0 y 9999
+    const idA = "A202263" + numAleatorio;
     var administrativoInfo = {
+      idAdmin:idA,
       password: password,
       name: name,
       apePat: apePat,
       apeMat: apeMat,
+      photo: "https://historiadeltiempopresente.com/wp-content/uploads/2021/01/userdefaultimage.jpg",
       departamentoAdmin: departamentoAdmin,
       correoAdmin: correoAdmin
     };
     return this.http.post("https://localhost:7276/Administrativo/datos", JSON.stringify(administrativoInfo), this.opcionesHttp);
   }
-  
 }
