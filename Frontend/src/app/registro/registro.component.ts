@@ -69,22 +69,61 @@ export class RegistroComponent {
       });
     }
     else if(this.tipoUsuario == 2){
-      //console.log(this.idMaestro); Borrar estos comentarios
+      console.log(this.idMaestro);
       
-      //Agregar lo mismo que se hizó arriba para el alumno, pero para cada tipo de usuario
+      this.rService.PostMaestro(this.idMaestro, this.password, this.nombre, this.apPat, this.apMat).subscribe(resultado => {
+        if(resultado){
+          alert("Registro exitoso.")
+        }
+        else{
+          alert("Error: No pudo realizarse el registro.")
+        }
+      });
     }
     else if(this.tipoUsuario == 3){
-      //console.log(this.depto);
-      //console.log(this.correoA);
+      console.log(this.depto);
+      console.log(this.correoA);
+      this.rService.PostAdministrativo(this.password, this.nombre, this.apPat, this.apMat, this.depto,this.correoA).subscribe(resultado => {
+        if(resultado){
+          alert("Registro exitoso.")
+        }
+        else{
+          alert("Error: No pudo realizarse el registro.")
+        }
+      });
     }
     else if(this.tipoUsuario == 4){
-      //console.log(this.correoP);
+      console.log(this.correoP);
+      this.rService.PostPolicia(this.password, this.nombre, this.apPat, this.apMat, this.correoP).subscribe(resultado => {
+        if(resultado){
+          alert("Registro exitoso.")
+        }
+        else{
+          alert("Error: No pudo realizarse el registro.")
+        }
+      });
     }
     else if(this.tipoUsuario == 5){
-      //console.log(this.correoI);
+      console.log(this.correoI);
+      this.rService.PostIntendencia(this.password, this.nombre, this.apPat, this.apMat, this.correoI).subscribe(resultado => {
+        if(resultado){
+          alert("Registro exitoso.")
+        }
+        else{
+          alert("Error: No pudo realizarse el registro.")
+        }
+      });
     }
     else if(this.tipoUsuario == 6){
-      //console.log(this.correoC);
+      console.log(this.correoC);
+      this.rService.PostCafeteria(this.password, this.nombre, this.apPat, this.apMat, this.correoC).subscribe(resultado => {
+        if(resultado){
+          alert("Registro exitoso.")
+        }
+        else{
+          alert("Error: No pudo realizarse el registro.")
+        }
+      });
     }
   }
 }
@@ -98,5 +137,55 @@ export interface DTO_Alumno{
   photo:string,
   estado:string
 }
+
+export interface DTO_Maestro{
+  idMaestro:string,
+  password:string,
+  name:string,
+  apePat:string,
+  apeMat:string
+}
+
+export interface DTO_Policia {
+  idPoli: string;
+  password: string;
+  name: string;
+  apePat: string;
+  apeMat: string;
+  correoPoli: string;
+}
+
+
+export interface DTO_Intendencia {
+  idInten: string;
+  password: string;
+  name: string;
+  apePat: string;
+  apeMat: string;
+  photo: string;
+  correoInten: string;
+}
+
+export interface DTO_Cafeteria {
+  idCafe: string;
+  password: string;
+  name: string;
+  apePat: string;
+  apeMat: string;
+  photo: string;
+  correoCafe: string;
+}
+
+export interface DTO_Administrativo {
+  idAdmin: string;
+  password: string;
+  name: string;
+  apePat: string;
+  apeMat: string;
+  photo: string;
+  departamentoAdmin: string;
+  correoAdmin: string;
+}
+
 
 //Agregar aquí los DTO de los demás usuarios (revisa que lleva cada uno, esta en https://github.com/MonicaGonzalez30/Entry-security-system-4AM1/tree/main/ProyectoBack/Model)
