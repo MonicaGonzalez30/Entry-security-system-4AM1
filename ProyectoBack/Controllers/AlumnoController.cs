@@ -96,12 +96,11 @@ namespace ProyectoBack.Controllers
                 {
                     return new JsonResult(new Alumno
                     {
-                        boleta = alumno.boleta,
+                        password = alumno.password,
                         name = alumno.name,
                         apePat = alumno.apePat,
                         apeMat = alumno.apeMat,
-                        photo = alumno.photo,
-                        estado = alumno.estado
+                        photo = alumno.photo
                     });
                 }
                 else

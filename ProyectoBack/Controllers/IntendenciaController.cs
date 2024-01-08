@@ -97,7 +97,7 @@ namespace ProyectoBack.Controllers
                     // Devuelve la información de la intendencia si se encuentra
                     return new JsonResult(new Intendencia
                     {
-                        idInten = intendencia.idInten,
+                        password = intendencia.password,
                         name = intendencia.name,
                         apePat = intendencia.apePat,
                         apeMat = intendencia.apeMat,
