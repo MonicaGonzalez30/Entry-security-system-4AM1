@@ -97,7 +97,7 @@ namespace ProyectoBack.Controllers
                     // Devuelve la información del policia si se encuentra
                     return new JsonResult(new Policia
                     {
-                        idPoli = policia.idPoli,
+                        password = policia.password,
                         name = policia.name,
                         apePat = policia.apePat,
                         apeMat = policia.apeMat,

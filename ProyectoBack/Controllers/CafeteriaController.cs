@@ -96,7 +96,7 @@ namespace ProyectoBack.Controllers
                 {
                     return new JsonResult(new Cafeteria
                     {
-                        idCafe = cafeteria.idCafe,
+                        password = cafeteria.password,
                         name = cafeteria.name,
                         apePat = cafeteria.apePat,
                         apeMat = cafeteria.apeMat,

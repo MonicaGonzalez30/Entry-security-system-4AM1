@@ -98,12 +98,13 @@ namespace ProyectoBack.Controllers
                     // Devuelve la información del administrador si se encuentra
                     return new JsonResult(new Administrativo
                     {
-                        idAdmin = administrativo.idAdmin,
+                        password = administrativo.password,
                         name = administrativo.name,
                         apePat = administrativo.apePat,
                         apeMat = administrativo.apeMat,
                         photo = administrativo.photo,
-
+                        departamentoAdmin = administrativo.departamentoAdmin,
+                        correoAdmin = administrativo.correoAdmin
                     });
                 }
                 else

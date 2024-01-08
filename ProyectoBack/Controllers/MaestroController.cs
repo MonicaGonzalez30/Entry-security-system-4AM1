@@ -96,7 +96,7 @@ namespace ProyectoBack.Controllers
                     // Devuelve la información del maestro si se encuentra
                     return new JsonResult(new Maestro
                     {
-                        idMaestro = maestro.idMaestro,
+                        password = maestro.password,
                         name = maestro.name,
                         apePat = maestro.apePat,
                         apeMat = maestro.apeMat,
