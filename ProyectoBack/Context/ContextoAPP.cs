@@ -14,9 +14,10 @@ namespace ProyectoBack.Context
         public DbSet<Intendencia> Intendencia { get; set; }
         public DbSet<Cafeteria> Cafeteria { get; set; }
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=localhost;database=ProyectoBaseV3;user=root;password=root");
+            optionsBuilder.UseMySQL("server=localhost; database=ProyectoBase; user=root; password=admin");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -53,6 +54,8 @@ namespace ProyectoBack.Context
                 entity.Property(r => r.idUsuario);
                 entity.Property(r => r.TipoUsuario);
                 entity.Property(r => r.Instalacion);
+                entity.Property(r => r.Registro);
+
             });
 
             modelBuilder.Entity<Maestro>(entity =>
@@ -98,6 +101,7 @@ namespace ProyectoBack.Context
                 entity.Property(c => c.photo);
                 entity.Property(c => c.correoCafe);
             });
+
         }
     }
 }

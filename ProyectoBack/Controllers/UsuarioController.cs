@@ -11,7 +11,7 @@ namespace ProyectoBack.Controllers
     public class UsuarioController : ControllerBase
     {
         [HttpGet("{id}")]
-        public JsonResult GetAlumnoById(string id)
+        public JsonResult GetUsuarioById(string id)
         {
             using (ContextoAPP Contexto = new ContextoAPP())
             {
