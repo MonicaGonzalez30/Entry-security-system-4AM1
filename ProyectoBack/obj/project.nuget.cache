@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QEKB5v29JOeHuDEI1G6rmf/AiXVbcqQbm3BeG8llvfISnRB1+1WJK+bsKh7oJx96NBpjfynWmVfVq+c0r3NMUQ==",
+  "dgSpecHash": "AESQe8UTYzcuYI364AFjDwKt0SYP9o7wTr0+2Zl+yoRxWgzg4vCyDAqVrMiJNRKs8UpeBHQRXnwjXki9cjrUbQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\rodja\\source\\repos\\Entry-security-system-4AM1-main\\ProyectoBack\\ProyectoBack\\ProyectoBack.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,7 @@
     "C:\\Users\\rodja\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\rodja\\.nuget\\packages\\mysql.data\\8.2.0\\mysql.data.8.2.0.nupkg.sha512",
     "C:\\Users\\rodja\\.nuget\\packages\\mysql.entityframeworkcore\\6.0.21\\mysql.entityframeworkcore.6.0.21.nupkg.sha512",
+    "C:\\Users\\rodja\\.nuget\\packages\\qrcoder\\1.4.3\\qrcoder.1.4.3.nupkg.sha512",
     "C:\\Users\\rodja\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\rodja\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\rodja\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
@@ -58,7 +59,8 @@
     "C:\\Users\\rodja\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\rodja\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\rodja\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\rodja\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512"
+    "C:\\Users\\rodja\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512",
+    "C:\\Users\\rodja\\.nuget\\packages\\zxing.net\\0.16.9\\zxing.net.0.16.9.nupkg.sha512"
   ],
   "logs": []
 }

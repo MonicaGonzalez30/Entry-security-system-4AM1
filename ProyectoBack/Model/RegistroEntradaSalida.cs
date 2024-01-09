@@ -7,7 +7,8 @@
         public TimeSpan Hora { get; set; }
         public string idUsuario { get; set; }
         public string TipoUsuario { get; set; }
-        public string Instalacion { get; set; }
+        public string Instalacion { get; set; } 
+        public string Registro { get; set; }
     }
 }
 
