@@ -27,6 +27,7 @@ namespace ProyectoBack.Controllers
                         idUsuario = registro.idUsuario,
                         TipoUsuario = registro.TipoUsuario,
                         Instalacion = registro.Instalacion,
+                        Registro = registro.Registro
                     });
                 }
             }
